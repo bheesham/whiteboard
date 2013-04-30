@@ -7,7 +7,7 @@ io = require("socket.io").listen(5666,
 
 Sequelize = require("sequelize")
 
-sqlize = new Sequelize("whiteboard", "whiteboard", "penis everywhere", 
+sqlize = new Sequelize("whiteboard", "whiteboard", "whiteboard", 
   define:
     underscored: true
     charset: "utf8"
