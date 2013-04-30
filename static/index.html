@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>online whiteboard</title>
+    <meta name="description" content="An online whiteboard">
+    <meta name="keywords" content="whiteboard, online, collaborative">
+    <meta name="author" content="Bheesham Persaud">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/whiteboard.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="twelve columns alpha">
+          <h5>online whiteboard</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="whiteboard-container">
+      <canvas id="whiteboard"></canvas>
+    </div>
+
+    <div class="content-container container"> 
+      <div class="twelve columns alpha">
+        <h3>about</h3>
+        This is a project I've always wanted to complete, but never seemed to have the time to work on. <a href="">View this project on github.</a>
+        <br><br>
+        Software and libraries used:
+        <ul class="circle">
+          <li><a href="http://coffeescript.org/">CoffeeScript</a></li>
+          <li><a href="http://nodejs.org/">node.js</a></li>
+          <li><a href="http://socket.io/">socket.io</a></li>
+          <li><a href="https://github.com/broofa/node-uuid">node-uuid</a></li>
+          <li><a href="http://html-canvas-lib.sourceforge.net/">HTML Canvas Library</a></li>
+          <li><a href="http://jquery.com/">jQuery</a></li>
+          <li><a href="http://www.threedubmedia.com/code/event/drag/">jquery.event.drag</a></li>
+          <li><a href="http://www.getskeleton.com/">Skeleton</a></li>
+        </ul>
+        <br>
+        <button id="create-new-room">Create your own board</button>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/uuid.js"></script>
+    <script type="text/javascript" src="/js/socket.io.js"></script>
+    <script type="text/javascript" src="/js/canvas.js"></script>
+    <script type="text/javascript" src="/js/whiteboard.js"></script>
+  </body>
+</html>

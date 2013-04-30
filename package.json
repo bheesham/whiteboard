@@ -1,0 +1,19 @@
+{
+  "name":         "whiteboard",
+  "author" :      "Bheesham Persaud <bheesham.persaud@live.ca>",
+  "description":  "Online whiteboard application",
+  "version":      "0.0.2",
+  "private":      true,
+  "contributors": [
+    {
+      "name":  "Bheesham Persaud",
+      "email": "bheesham.persaud@live.ca"
+    }
+  ],
+  "dependencies": {
+    "sequelize":        "*",
+    "node-uuid":        "1.4.0",
+    "socket.io":        "0.9.14"
+  },
+  "license": "ISC License"
+}
