@@ -5,7 +5,7 @@ whiteboard
 FAQ
 ---
 
-Q: I HAVE NO IDEA HOW TO RUN THIS!
+Q: I HAVE NO IDEA HOW TO RUN THIS! \\
 A: Run `npm install` in the root folder, and make sure you have something similar in your nginx.conf file:
 ```
 server {
