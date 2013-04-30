@@ -11,7 +11,7 @@
 
   Sequelize = require("sequelize");
 
-  sqlize = new Sequelize("whiteboard", "whiteboard", "whiteboard", {
+  sqlize = new Sequelize("whiteboard", "whiteboard", "penis everywhere", {
     define: {
       underscored: true,
       charset: "utf8",
@@ -67,9 +67,7 @@
           });
         });
       });
-      return socket.on("erase", function(data) {
-        return console.log("A");
-      });
+      return socket.on("erase", function(data) {});
     });
   };
 

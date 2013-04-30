@@ -7,7 +7,7 @@ io = require("socket.io").listen(5666,
 
 Sequelize = require("sequelize")
 
-sqlize = new Sequelize("whiteboard", "whiteboard", "whiteboard", 
+sqlize = new Sequelize("whiteboard", "whiteboard", "penis everywhere", 
   define:
     underscored: true
     charset: "utf8"
@@ -56,7 +56,6 @@ io_events = () ->
 
     socket.on("erase", (data) ->
       # Erase
-      console.log("A")
     )
 
   )

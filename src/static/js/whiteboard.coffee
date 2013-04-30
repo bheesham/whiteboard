@@ -9,7 +9,7 @@ if window.location.hash? and window.location.hash.length > 0
 
   # Set up the connection stuff
   room_guid = window.location.hash.substr(1)
-  socket = io.connect("http://127.0.0.1/")
+  socket = io.connect(window.location.protocol + "//" + window.location.hostname + "/")
 
   socket.on("debug", (data) ->
     console.log(data)

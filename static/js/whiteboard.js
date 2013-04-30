@@ -12,7 +12,7 @@
   if ((window.location.hash != null) && window.location.hash.length > 0) {
     $(".whiteboard-container").css("display", "block");
     room_guid = window.location.hash.substr(1);
-    socket = io.connect("http://127.0.0.1/");
+    socket = io.connect(window.location.protocol + "//" + window.location.hostname + "/");
     socket.on("debug", function(data) {
       return console.log(data);
     });
