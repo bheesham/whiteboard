@@ -43,6 +43,3 @@ server {
 ```
 
 Then run ```node app.js```
-
-
-All debug messages are left on.

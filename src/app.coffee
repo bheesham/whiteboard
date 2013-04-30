@@ -1,11 +1,19 @@
-io = require("socket.io").listen(5666)
+io = require("socket.io").listen(5666,
+  "log level": 1
+  "browser client minification": true
+  "browser client etag": true
+  "browser client gzip": true
+)
+
 Sequelize = require("sequelize")
 
 sqlize = new Sequelize("whiteboard", "whiteboard", "whiteboard", 
   define:
     underscored: true
     charset: "utf8"
-    timestamps: true
+    timestamps: false
+    logging: false
+    pool: { maxConnections: 5, maxIdleTime: 30}
 )
 
 Blobs = sqlize.define('blobs', 
@@ -27,11 +35,8 @@ io_events = () ->
         where:
           room_guid: data.room_guid
       ).success((blobs) ->
-        if not blobs?
-          console.log("Room " + data.room_guid + " not exist.")
-        else
+        if blobs?
           for blob in blobs
-            console.log("Served blobs from room " + data.room_guid)
             io.sockets.in(data.room_guid).emit("draw", blob.values)
       )
     )

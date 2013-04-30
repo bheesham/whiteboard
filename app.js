@@ -2,7 +2,12 @@
 (function() {
   var Blobs, Sequelize, io, io_events, sqlize;
 
-  io = require("socket.io").listen(5666);
+  io = require("socket.io").listen(5666, {
+    "log level": 1,
+    "browser client minification": true,
+    "browser client etag": true,
+    "browser client gzip": true
+  });
 
   Sequelize = require("sequelize");
 
@@ -10,7 +15,12 @@
     define: {
       underscored: true,
       charset: "utf8",
-      timestamps: true
+      timestamps: false,
+      logging: false,
+      pool: {
+        maxConnections: 5,
+        maxIdleTime: 30
+      }
     }
   });
 
@@ -35,13 +45,10 @@
         }).success(function(blobs) {
           var blob, _i, _len, _results;
 
-          if (blobs == null) {
-            return console.log("Room " + data.room_guid + " not exist.");
-          } else {
+          if (blobs != null) {
             _results = [];
             for (_i = 0, _len = blobs.length; _i < _len; _i++) {
               blob = blobs[_i];
-              console.log("Served blobs from room " + data.room_guid);
               _results.push(io.sockets["in"](data.room_guid).emit("draw", blob.values));
             }
             return _results;
